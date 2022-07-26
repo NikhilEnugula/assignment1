@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>FooD ControL</title>
+  </head>
+  <body ng-app="myApp">
+    <h3>Please Enter Your Food Items</h3>
+    <div ng-controller="foodCon">
+      <input type="text" ng-model="foodlist" placeholder="enter your items" />
+      <button ng-click="countItems()">click here</button>
+
+      <p ng-style="color">{{message}}</p>
+    </div>
+    <script src="foodcontrol.js"></script>
+  </body>
+</html>
