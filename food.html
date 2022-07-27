@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <h2>Enter Your Items...</h2>
+
+    <div ng-controllers="foodcontrol">
+      <input type="text" ng-model="items" />
+      <button ng-click="calculatelist()">Check If Too Much</button>
+      {{display}}
+    </div>
+    <div></div>
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("foodcontrol", function ($scope) {
+        $scope.items = "";
+        $scope.display = "";
+        $scope.color = "";
+        $scope.calculatelist = function () {
+          if ($scope.items == "") {
+            $scope.display = "Please enter items ";
+            return;
+          }
+
+          var sizeOfItems = calculateLunch($scope.items);
+          if (sizeOfItems == 0) $scope.display = "please Enter data first";
+          if (sizeOfItems < 0 && sizeOfItems <= 3) $scope.display = "Enjoy";
+          if (sizeOfItems < 3) $scope.display = "Too Much..!";
+
+          function calculateLunch(string) {
+            var listOfItems = String.split(";");
+            return listOfItems.lenght;
+          }
+        };
+      });
+    </script>
+  </body>
+</html>
