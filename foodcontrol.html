@@ -6,14 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <title>FooD ControL</title>
+    <style>
+      body {
+        align-items: center;
+        text-align: center;
+        padding: 10%;
+        background-image: url("../assignment1/foodback.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
   </head>
   <body ng-app="myApp">
-    <h3>Please Enter Your Food Items</h3>
+    <h1>Please Enter Your Food Items</h1>
     <div ng-controller="foodCon">
-      <input type="text" ng-model="foodlist" placeholder="enter your items" />
-      <button ng-click="countItems()">click here</button>
+      <input
+        type="text"
+        ng-model="foodlist"
+        placeholder="enter your items separated by comma ',' "
+      />
+      <br />
+      <br />
+      <button ng-click="countItems()">Check If Too Much</button>
 
-      <p ng-style="color">{{message}}</p>
+      <h3 ng-style="color">{{message}}</h3>
     </div>
     <script src="foodcontrol.js"></script>
   </body>
